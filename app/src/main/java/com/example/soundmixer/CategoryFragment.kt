@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_category.*
 
 class CategoryFragment : Fragment(R.layout.fragment_category) {
@@ -19,6 +20,8 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
         category_list.setOnItemClickListener { parent, view, position, id ->
 
             Toast.makeText(activity, "You clicked on ${category[position]}", Toast.LENGTH_SHORT).show()
+
+            Navigation.findNavController(view).navigate(R.id.next_action)
         }
     }
 }
