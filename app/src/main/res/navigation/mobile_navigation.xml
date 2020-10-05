@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/destination_home">
+
+    <fragment
+        android:id="@+id/destination_home"
+        android:name="com.example.soundmixer.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/destination_play" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_play"
+        android:name="com.example.soundmixer.PlayFragment"
+        android:label="fragment_play"
+        tools:layout="@layout/fragment_play" >
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/destination_category" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_category"
+        android:name="com.example.soundmixer.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/destination_list" />
+    </fragment>
+    <fragment
+        android:id="@+id/destination_list"
+        android:name="com.example.soundmixer.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/destination_play" />
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue="no category" />
+    </fragment>
+</navigation>
