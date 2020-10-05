@@ -1,6 +1,7 @@
 package com.example.soundmixer
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ArrayAdapter
@@ -13,7 +14,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val category = arrayOf("Cars", "Bikes", "Airplanes", "Tram", "Construction", "Wind", "Rain")
+        val category = arrayOf("Cars", "Bike", "Ambience", "Airplane", "Tram", "Construction", "Wind", "Rain")
 
         category_list.adapter = activity?.applicationContext?.let { ArrayAdapter<String>(it, android.R.layout.simple_list_item_1, category) }
 
@@ -21,7 +22,9 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
 
             Toast.makeText(activity, "You clicked on ${category[position]}", Toast.LENGTH_SHORT).show()
 
-            Navigation.findNavController(view).navigate(R.id.next_action)
+            val nextAction = CategoryFragmentDirections.nextAction(category[position])
+
+            Navigation.findNavController(view).navigate(nextAction)
         }
     }
 }

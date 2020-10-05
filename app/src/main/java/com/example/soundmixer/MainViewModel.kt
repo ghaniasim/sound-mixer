@@ -9,8 +9,8 @@ class MainViewModel : ViewModel() {
     val repository: SoundRepository = SoundRepository()
 
     fun mySounds(filter: String) = liveData(Dispatchers.IO) {
-        val retrivedSounds = repository.getJSON(filter)
+        val retrievedSounds = repository.getJSON(filter)
 
-        emit(retrivedSounds)
+        emit(retrievedSounds)
     }
 }
