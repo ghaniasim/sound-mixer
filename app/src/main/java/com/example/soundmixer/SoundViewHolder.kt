@@ -21,7 +21,7 @@ class SoundViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
     fun bind(sound: Result, action: OnItemClickListener) {
         mNameView?.text = sound.name
 
-        mNameView?.setOnClickListener { action.onIconClick() }
+        mNameView?.setOnClickListener { action.onIconClick(sound, adapterPosition) }
 
         mImageView?.setOnClickListener {
             action.onItemClick(sound, adapterPosition)
@@ -32,5 +32,5 @@ class SoundViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
 interface OnItemClickListener {
 
     fun onItemClick(item: Result, position: Int)
-    fun onIconClick()
+    fun onIconClick(item: Result, position: Int)
 }

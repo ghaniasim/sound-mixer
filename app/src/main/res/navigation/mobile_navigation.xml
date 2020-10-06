@@ -22,6 +22,14 @@
         <action
             android:id="@+id/next_action"
             app:destination="@id/destination_category" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="no name" />
+        <argument
+            android:name="preview"
+            app:argType="string"
+            android:defaultValue="no preview" />
     </fragment>
     <fragment
         android:id="@+id/destination_category"

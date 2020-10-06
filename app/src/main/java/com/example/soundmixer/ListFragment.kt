@@ -2,23 +2,20 @@ package com.example.soundmixer
 
 import android.media.AudioAttributes
 import android.media.MediaPlayer
-import android.media.MediaRecorder
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.navArgs
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_list.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import java.net.URL
 
 
 class ListFragment : Fragment(R.layout.fragment_list), OnItemClickListener {
@@ -77,8 +74,13 @@ class ListFragment : Fragment(R.layout.fragment_list), OnItemClickListener {
         Toast.makeText(activity, "Sound playing", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onIconClick() {
+    override fun onIconClick(item: Result, position: Int) {
         Toast.makeText(activity, "Icon clicked", Toast.LENGTH_SHORT).show()
+        val name = item.name
+        val preview = item.previews?.preview_hq_mp3
+        val nextAction = ListFragmentDirections.nextAction(name!!, preview!!)
+
+        view?.let { Navigation.findNavController(it).navigate(nextAction) }
     }
 
     fun playAudio(track: String) {
