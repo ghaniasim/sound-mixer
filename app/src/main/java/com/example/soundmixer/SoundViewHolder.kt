@@ -17,8 +17,20 @@ class SoundViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
         mTagsView = itemView.txttags
     }
 
-    fun bind(sound: Result) {
+    fun bind(sound: Result, action: OnItemClickListener) {
         mNameView?.text = sound.name
         mTagsView?.text = sound.previews?.preview_hq_mp3
+
+        mNameView?.setOnClickListener { action.onIconClick() }
+
+        mTagsView?.setOnClickListener {
+            action.onItemClick(sound, adapterPosition)
+        }
     }
+}
+
+interface OnItemClickListener {
+
+    fun onItemClick(item: Result, position: Int)
+    fun onIconClick()
 }
