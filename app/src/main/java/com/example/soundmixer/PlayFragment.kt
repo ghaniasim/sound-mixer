@@ -3,7 +3,6 @@ package com.example.soundmixer
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.lifecycle.lifecycleScope
@@ -28,6 +27,8 @@ class PlayFragment : Fragment(R.layout.fragment_play) {
             sounds.add(PlaySound(name, preview))
         }
 
+        play_list.adapter = activity?.applicationContext?.let { PlayListAdapter(it, sounds) }
+
         add_button.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.next_action)
         }
@@ -35,8 +36,8 @@ class PlayFragment : Fragment(R.layout.fragment_play) {
         play_button.setOnClickListener {
 
             lifecycleScope.launch(Dispatchers.Main) {
-                for (i in 1 until sounds.size) {
-                    val track = sounds[i].preview
+                for (sound in sounds) {
+                    val track = sound.preview
                     val ft = async(Dispatchers.IO) {
                         if (track != null) {
                             playAudio(track)

@@ -12,16 +12,13 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/next_action"
-            app:destination="@id/destination_play" />
+            app:destination="@id/destination_category" />
     </fragment>
     <fragment
         android:id="@+id/destination_play"
         android:name="com.example.soundmixer.PlayFragment"
         android:label="fragment_play"
         tools:layout="@layout/fragment_play" >
-        <action
-            android:id="@+id/next_action"
-            app:destination="@id/destination_category" />
         <argument
             android:name="name"
             app:argType="string"
@@ -30,6 +27,9 @@
             android:name="preview"
             app:argType="string"
             android:defaultValue="no preview" />
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/destination_category" />
     </fragment>
     <fragment
         android:id="@+id/destination_category"
