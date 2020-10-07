@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/music"
     tools:context=".PlayFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -11,11 +12,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.912"
-        app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/ic_baseline_add_24"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/play_button"

@@ -70,12 +70,10 @@ class ListFragment : Fragment(R.layout.fragment_list), OnItemClickListener {
             }
             ft.await()
         }
-
-        Toast.makeText(activity, "Sound playing", Toast.LENGTH_SHORT).show()
     }
 
     override fun onIconClick(item: Result, position: Int) {
-        Toast.makeText(activity, "Icon clicked", Toast.LENGTH_SHORT).show()
+
         val name = item.name
         val preview = item.previews?.preview_hq_mp3
         val nextAction = ListFragmentDirections.nextAction(name!!, preview!!)

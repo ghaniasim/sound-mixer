@@ -7,12 +7,27 @@
     tools:context=".MainFragment">
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/create_button"
+        style="?attr/materialButtonOutlinedStyle"
+        app:icon="@drawable/ic_baseline_music_note_24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:padding="15dp"
+        android:textSize="15dp"
         android:text="Create Sound"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="112dp"
+        android:src="@drawable/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
