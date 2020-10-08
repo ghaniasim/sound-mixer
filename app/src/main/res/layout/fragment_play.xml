@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/music"
+    android:background="@drawable/category"
     tools:context=".PlayFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -46,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Media Player"
+        android:textColor="#fff"
         android:textStyle="bold"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/play_list"

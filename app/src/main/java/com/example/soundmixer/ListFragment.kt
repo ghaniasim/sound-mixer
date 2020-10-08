@@ -17,7 +17,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
-
 class ListFragment : Fragment(R.layout.fragment_list), OnItemClickListener {
 
     private var soundList = ArrayList<Result>()
@@ -60,6 +59,8 @@ class ListFragment : Fragment(R.layout.fragment_list), OnItemClickListener {
     }
 
     override fun onItemClick(item: Result, position: Int) {
+
+        Toast.makeText(activity, "Demo playing", Toast.LENGTH_SHORT).show()
 
         lifecycleScope.launch(Dispatchers.Main) {
             val track = item.previews?.preview_hq_mp3

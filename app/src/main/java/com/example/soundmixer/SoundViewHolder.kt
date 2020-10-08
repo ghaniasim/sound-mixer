@@ -15,7 +15,7 @@ class SoundViewHolder(inflater: LayoutInflater, parent: ViewGroup) :
 
     init {
         mNameView = itemView.txtname
-        mImageView = itemView.imageView
+        mImageView = itemView.item_imageView
     }
 
     fun bind(sound: Result, action: OnItemClickListener) {

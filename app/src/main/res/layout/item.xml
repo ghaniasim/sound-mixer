@@ -11,19 +11,20 @@
         android:layout_margin="4dp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/item_imageView"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/ic_baseline_play_circle_filled_24"
-            android:padding="2dp"/>
+            android:src="@drawable/ic_baseline_play_circle_outline_24"
+            android:layout_margin="15dp"/>
 
         <TextView
             android:id="@+id/txtname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@id/imageView"
+            android:layout_toEndOf="@id/item_imageView"
             android:text="Line 1"
+            android:padding="15dp"
             android:layout_margin="8dp"
             android:textColor="@color/colorAccent"
             android:textSize="20sp"
